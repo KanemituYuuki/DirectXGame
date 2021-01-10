@@ -1,0 +1,22 @@
+﻿#pragma once
+
+#include "CollisionPrimitive.h"
+
+/// <summary>
+/// 当たり判定ヘルパークラス
+/// </summary>
+class Collision
+{
+public:
+	/// <summary>
+	/// 球と平面の当たり判定
+	/// </summary>
+	/// <param name="sphere">球</param>
+	/// <param name="plane">平面</param>
+	/// <param name="inter">交点（平面上の再接近点）</param>
+	/// <returns>交差しているか否か</returns>
+	static bool CheckSphere2Plane(const Sphere& sphere, const Plane& plane, DirectX::XMVECTOR *inter = nullptr);
+	static void ClosestPtPoint2Triangle(const DirectX::XMVECTOR& point, const Triangle& triangle, DirectX::XMVECTOR*closest);
+	static bool CheckSphere2Triangle(const Sphere& sphere, const Triangle& triangle, DirectX::XMVECTOR *inter = nullptr);
+};
+
